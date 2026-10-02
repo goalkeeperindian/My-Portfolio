@@ -1,47 +1,30 @@
-# 🌐 Lavish Kumar — Portfolio
+# Lavish Kumar — Portfolio
 
-Welcome to my personal portfolio website!  
-Built with **Vite + React + TailwindCSS + Three.js**, this site showcases my projects, skills, and contact details in an interactive and modern design.  
+Built with React, Vite and Motion. The layout takes its cues from cartooneast.in: full-screen snap sections, a cartoon character pinned on the left that changes pose for each section, and the content on the right.
 
----
+## Run locally
 
-## ✨ Features
-- ⚡ Built with **Vite** for super-fast development and builds  
-- 🎨 Styled using **TailwindCSS** for responsive and clean UI  
-- 🌀 Integrated **Three.js** for 3D animations and effects  
-- 📱 Fully responsive across devices  
-- 📬 Contact form & GitHub/LinkedIn integration  
-
----
-
-## 🚀 Tech Stack
-- **Frontend:** React (Vite)  
-- **Styling:** Tailwind CSS  
-- **3D Graphics:** Three.js  
-- **Version Control:** Git & GitHub  
-
----
-
-
----
-
-## 🛠️ Setup & Installation
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/goalkeeperindian/My-Portfolio.git
-   cd My-Portfolio
-
-
-Install dependencies:
-
+```bash
 npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
+```
 
+## Edit content
 
-Run locally:
+All text, projects, timeline, skills and cards live in **`src/data.js`**. Edit that one file and the site updates.
 
-npm run dev
+- Resume download: `public/Lavish_Kumar_Resume.pdf` (replace the file to update it)
+- Character poses: `src/components/Character.jsx`
 
+## Deploy (Vercel, recommended)
 
-Build for production:
+1. Push this folder to a GitHub repo.
+2. Go to vercel.com → **Add New Project** → import the repo.
+3. Vercel detects Vite automatically (build: `npm run build`, output: `dist`). Click **Deploy**.
 
-npm run build
+Netlify works the same way. For GitHub Pages, set `base: '/<repo-name>/'` in `vite.config.js` first.
+
+## Using your own character videos (optional)
+
+The original site uses filmed puppet videos. To do the same, record or generate your own clips and replace `<Character pose={pose} />` in `src/App.jsx` with a `<video autoPlay muted loop playsInline>` for each section's pose.
